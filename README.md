@@ -32,8 +32,8 @@ Certifique-se de ter instalado:
 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seuusuario/juscrawler.git
-   cd juscrawler
+   git clone https://github.com/AllanPS98/jus-system.git
+   cd jus-system
    ```
 2. Suba os contêineres com Docker Compose:
    ```sh
