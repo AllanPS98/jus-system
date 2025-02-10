@@ -1,0 +1,16 @@
+alembic
+sqlalchemy
+requests
+celery
+fastapi
+httpx
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+python-dotenv
+pytest
+pytest-asyncio
+pytest-cov
+pytz
+pydantic-sqlalchemy
+pika

@@ -1,0 +1,32 @@
+extract_pdf/
+
+# Byte-compiled / Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Diretórios do ambiente virtual
+venv/
+.env/
+.venv/
+env/
+pip-wheel-metadata/
+
+# Configuração do IDE/editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.devcontainer/
+
+# Arquivos gerados pelo pytest
+.cache/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Arquivos do MyPy
+.mypy_cache/
+
+# Configurações do Docker
+.dockerignore

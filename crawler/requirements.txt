@@ -1,0 +1,9 @@
+requests
+beautifulsoup4
+celery[rabbitmq]
+sqlalchemy
+psycopg2-binary
+pytest
+pytest-asyncio
+pytest-cov
+pytz
