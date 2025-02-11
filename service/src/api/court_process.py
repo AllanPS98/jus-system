@@ -23,6 +23,8 @@ class CourtProcess(BaseModel):
     area: Optional[str]
     subject: Optional[str]
     distribution_date: Optional[str]
+    parts: List
+    moves: List
     created_at: datetime
     updated_at: datetime
 
@@ -63,6 +65,8 @@ def get_court_processes(value: str, page: int = 1, amount: int = 10, search_by: 
             area=item['area'],
             subject=item['subject'],
             distribution_date=item['distribution_date'],
+            parts=item['parts'],
+            moves=item['moves'],
             created_at=item['created_at'],
             updated_at=item['updated_at']
         )

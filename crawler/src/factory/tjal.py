@@ -153,12 +153,11 @@ class Tjal(Court):
         url = config_app.TJAL_URL_SEARCH_FIRST_DEGREE
         params = f'''?conversationId=&cbPesquisa=NUMPROC&numeroDigitoAnoUnificado={".".join(process_number.split('.')[:2])}&foroNumeroUnificado={process_number.split('.')[-1]}&dadosConsulta.valorConsultaNuUnificado={process_number}&dadosConsulta.valorConsultaNuUnificado=UNIFICADO&dadosConsulta.valorConsulta=&dadosConsulta.tipoNuProcesso=UNIFICADO'''
         response = self.session.get(
-            url=url + params,
+            url=url + params
         )
         html_result = response.text
         self.soup = BeautifulSoup(html_result, 'html.parser')
         if self.__check_not_found():
-            print('entrou aqui primeiro grau')
             return
         process_data = {
             'court_name': self.name,
@@ -179,7 +178,7 @@ class Tjal(Court):
         url = config_app.TJAL_URL_SEARCH_SECOND_DEGREE
         params = f'''?conversationId=&paginaConsulta=0&cbPesquisa=NUMPROC&numeroDigitoAnoUnificado={".".join(process_number.split('.')[:2])}&foroNumeroUnificado={process_number.split('.')[-1]}&dePesquisaNuUnificado={process_number}&dePesquisaNuUnificado=UNIFICADO&dePesquisa=&tipoNuProcesso=UNIFICADO'''
         response = self.session.get(
-            url=url + params,
+            url=url + params
         )
         html_result = response.text
         self.soup = BeautifulSoup(html_result, 'html.parser')
@@ -213,7 +212,7 @@ class Tjal(Court):
         url = config_app.TJAL_URL_SHOW_SECOND_DEGREE
         params = f'''?processo.codigo={process_code}'''
         response = self.session.get(
-                url=url + params,
+                url=url + params
             )
         html_result = response.text
         self.soup = BeautifulSoup(html_result, 'html.parser')

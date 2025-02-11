@@ -21,6 +21,8 @@ Jus-System é um repositório que integra uma API, um crawler para extração de
 |-- docker-compose.yml  # Configuração dos contêineres
 ```
 
+![Arquitetura](doc/images/arch.png)
+
 ## Pré-requisitos
 
 Certifique-se de ter instalado:
@@ -45,8 +47,11 @@ Certifique-se de ter instalado:
 ## Endpoints da API
 
 - `GET /court-process` - Recebe as informações do processo
+![Resposta com dados do processo](doc/images/get_court_process.png)
 - `POST /court-process` - Aciona o crawler para extrair informações
+![Requisição de coleta](doc/images/post_court_process.png)
 - `GET /control-process` - Recebe as informações da execução da extração
+![Resposta com dados do status do processamento](doc/images/get_control_process.png)
 
 
 

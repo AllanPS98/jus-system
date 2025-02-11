@@ -1,4 +1,7 @@
 requests
+requests-html
+lxml[html_clean]
+lxml_html_clean
 beautifulsoup4
 celery[rabbitmq]
 sqlalchemy
