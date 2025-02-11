@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Jus-System é um repositório que integra uma API, um crawler para extração de dados, um sistema de mensageria com RabbitMQ e um ambiente Docker Compose para facilitar a implantação.
+Jus-System é um repositório que integra uma API, um crawler para extração de dados, um sistema de mensageria com RabbitMQ e um ambiente Docker Compose para facilitar a implantação. Ele é capaz de coletar dados de processos judiciais do TJAL (Tribunal de Justiça de Alagoas) e do TJCE (Tribunal de Justiça do Ceará).
 
 ## Tecnologias Utilizadas
 
@@ -52,6 +52,14 @@ Certifique-se de ter instalado:
 ![Requisição de coleta](doc/images/post_court_process.png)
 - `GET /control-process` - Recebe as informações da execução da extração
 ![Resposta com dados do status do processamento](doc/images/get_control_process.png)
+
+## DER
+O diagrama é composto por duas entidades:
+   - **control_process**: Faz o controle do estado da requisição de coleta de dados do processo
+   - **court_process**: Armazena os dados coletados
+
+![DER](doc/images/der.png)
+
 
 
 
