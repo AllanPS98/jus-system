@@ -1,8 +1,8 @@
-# Projeto Jus-System
+# Projeto Justice-System
 
 ## Descrição
 
-Jus-System é um repositório que integra uma API, um crawler para extração de dados, um sistema de mensageria com RabbitMQ e um ambiente Docker Compose para facilitar a implantação. Ele é capaz de coletar dados de processos judiciais do TJAL (Tribunal de Justiça de Alagoas) e do TJCE (Tribunal de Justiça do Ceará).
+Justice-System é um repositório que integra uma API, um crawler para extração de dados, um sistema de mensageria com RabbitMQ e um ambiente Docker Compose para facilitar a implantação. Ele é capaz de coletar dados de processos judiciais do TJAL (Tribunal de Justiça de Alagoas) e do TJCE (Tribunal de Justiça do Ceará).
 
 ## Tecnologias Utilizadas
 
