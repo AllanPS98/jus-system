@@ -6,7 +6,7 @@ Jus-System é um repositório que integra uma API, um crawler para extração de
 
 ## Tecnologias Utilizadas
 
-- **Python** (FastAPI, Celery, Alembic)
+- **Python** (FastAPI, Celery, Alembic, SQLAlchemy, Requests, BeautifulSoap)
 - **RabbitMQ** (mensageria)
 - **PostgreSQL** (banco de dados)
 - **Docker e Docker Compose** (contêinerização e orquestração)

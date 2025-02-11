@@ -150,10 +150,12 @@ class Tjce(Court):
         return False
     
     def __get_first_degree(self, process_number):
+        self.headers["Referer"] = config_app.TJCE_URL_FIRST_DEGREE
         url = config_app.TJCE_URL_SEARCH_FIRST_DEGREE
         params = f'''?conversationId=&cbPesquisa=NUMPROC&numeroDigitoAnoUnificado={".".join(process_number.split('.')[:2])}&foroNumeroUnificado={process_number.split('.')[-1]}&dadosConsulta.valorConsultaNuUnificado={process_number}&dadosConsulta.valorConsultaNuUnificado=UNIFICADO&dadosConsulta.valorConsulta=&dadosConsulta.tipoNuProcesso=UNIFICADO'''
         response = self.session.get(
             url=url + params,
+            headers=self.headers
         )
         html_result = response.text
         self.soup = BeautifulSoup(html_result, 'html.parser')
@@ -175,10 +177,12 @@ class Tjce(Court):
         return process_data
     
     def __get_second_degree(self, process_number):
+        self.headers["Referer"] = config_app.TJAL_URL_SECOND_DEGREE
         url = config_app.TJCE_URL_SEARCH_SECOND_DEGREE
         params = f'''?conversationId=&paginaConsulta=0&cbPesquisa=NUMPROC&numeroDigitoAnoUnificado={".".join(process_number.split('.')[:2])}&foroNumeroUnificado={process_number.split('.')[-1]}&dePesquisaNuUnificado={process_number}&dePesquisaNuUnificado=UNIFICADO&dePesquisa=&tipoNuProcesso=UNIFICADO'''
         response = self.session.get(
             url=url + params,
+            headers=self.headers
         )
         html_result = response.text
         self.soup = BeautifulSoup(html_result, 'html.parser')
@@ -213,6 +217,7 @@ class Tjce(Court):
         params = f'''?processo.codigo={process_code}'''
         response = self.session.get(
             url=url + params,
+            headers=self.headers
         )
         html_result = response.text
         self.soup = BeautifulSoup(html_result, 'html.parser')
@@ -247,7 +252,7 @@ class Tjce(Court):
         results = []
         base_url = config_app.TJCE_URL_FIRST_DEGREE.split('/cpopg')[0]
         for href in hrefs:
-            response = self.session.get(base_url + href['link'])
+            response = self.session.get(url=base_url + href['link'], headers=self.headers)
             html_result = response.text
             self.soup = BeautifulSoup(html_result, 'html.parser')
             process_data_sd = {
@@ -267,6 +272,7 @@ class Tjce(Court):
         return results
 
     def get_process(self, process_number: str):
+        self.headers["Host"] = "esaj.tjce.jus.br"
         process_data = self.__get_first_degree(process_number)
         process_data_sd = self.__get_second_degree(process_number)
         results = []

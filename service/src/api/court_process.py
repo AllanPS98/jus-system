@@ -1,7 +1,7 @@
 from datetime import datetime
 from src.controllers.court_process import CourtProcessController
 from fastapi import APIRouter, HTTPException
-from typing import List
+from typing import List, Optional
 from src.model.court_process import CourtProcess
 from pydantic import BaseModel
 
@@ -16,13 +16,13 @@ class PostCourtProcessResult(BaseModel):
 class CourtProcess(BaseModel):
     court_process_id: str
     control_process_id: str
-    court_name: str
-    process_number: str
-    degree: int
-    process_class: str
-    area: str
-    subject: str
-    distribution_date: str
+    court_name: Optional[str]
+    process_number: Optional[str]
+    degree: Optional[int]
+    process_class: Optional[str]
+    area: Optional[str]
+    subject: Optional[str]
+    distribution_date: Optional[str]
     created_at: datetime
     updated_at: datetime
 
